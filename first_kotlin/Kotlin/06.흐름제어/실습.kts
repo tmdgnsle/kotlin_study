@@ -50,11 +50,11 @@ when (number4) {
     else -> println("모르겠습니다")
 
 }
-when (number4) {
-    4 -> println("4입니다")
-    "안녕하세요" -> println("hello")
-    is Boolean -> println("모르겠습니다")
-}
+//when (number4) {
+//    4 -> println("4입니다")
+//    "안녕하세요" -> println("hello")
+//    is Boolean -> println("모르겠습니다")
+//}
 when (number4) {
     in 1..10 -> println("number is in 1..10") // number4 in 1..10 -> Boolean
     in 20..30 -> println("number is in 20..30")
