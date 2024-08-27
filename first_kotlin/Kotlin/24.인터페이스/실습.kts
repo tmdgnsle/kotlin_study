@@ -44,17 +44,17 @@ class Student : Person {
     }
 }
 
-class GoodStudent : Student() {
-    override fun sleep() {
-        super.sleep()
-    }
-
-    override var dress: String
-        get() = super.dress
-        set(value) {}
-
-
-}
+//class GoodStudent : Student() {
+//    override fun sleep() {
+//        super.sleep()
+//    }
+//
+//    override var dress: String
+//        get() = super.dress
+//        set(value) {}
+//
+//
+//}
 
 class Teacher : Person {
     override var dress: String
