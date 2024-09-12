@@ -22,8 +22,7 @@ class AsyncActivity : AppCompatActivity() {
 //        }
 
         val backgroundTask = BackgroundAsyncTask(
-            findViewById(R.id.progressBar),
-            findViewById(R.id.progressBarText)
+            findViewById(R.id.progressBar), findViewById(R.id.progressBarText)
         )
 
         findViewById<TextView>(R.id.start).setOnClickListener {
@@ -40,8 +39,7 @@ class AsyncActivity : AppCompatActivity() {
 }
 
 class BackgroundAsyncTask(
-    val progressbar: ProgressBar,
-    val progressText: TextView
+    val progressbar: ProgressBar, val progressText: TextView
 ) : AsyncTask<Int, Int, Int>() {
     // Params, Progress, Result
     // params -> doInbackgound에서 사용
@@ -54,7 +52,7 @@ class BackgroundAsyncTask(
     var percent: Int = 0
 
     override fun doInBackground(vararg params: Int?): Int {
-        while (isCancelled() == false){
+        while (isCancelled() == false) {
             percent++
             if (percent > 100) break
             else {
