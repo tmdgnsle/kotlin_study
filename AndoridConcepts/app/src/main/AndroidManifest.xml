@@ -16,7 +16,7 @@
         android:theme="@style/Theme.AndoridConcepts"
         tools:targetApi="31">
         <activity
-            android:name=".TablayoutPagerSimpleActivity"
+            android:name=".SharedPreferenceActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,13 +25,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TablayoutPagerNewActivity"
+            android:name=".TablayoutPagerSimpleActivity"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".TablayoutPagerActivity"
+            android:name=".TablayoutPagerNewActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".TablayoutPagerActivity"
+            android:exported="true" />
         <activity
             android:name=".RecyclerViewHomework"
             android:exported="true" />
