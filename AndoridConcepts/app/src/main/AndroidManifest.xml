@@ -16,7 +16,7 @@
         android:theme="@style/Theme.AndoridConcepts"
         tools:targetApi="31">
         <activity
-            android:name=".RecyclerViewActivity"
+            android:name=".RecyclerViewHomework"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,59 +24,44 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
-            android:name=".ListViewActivity"
+            android:name=".RecyclerViewActivity"
             android:exported="true">
 
         </activity>
+        <activity
+            android:name=".ListViewActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".PhoneBookDetailActivity"
             android:exported="false" />
         <activity
             android:name=".PhoneBookActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".AddViewActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".GlideActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ResourceActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ApplicationActivityTwo"
             android:exported="false" />
         <activity
             android:name=".ApplicationActivityOne"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".AsyncActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ThreadActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".FragmentActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".Homework_2"
             android:exported="true">
@@ -122,9 +107,7 @@
             android:exported="false" />
         <activity
             android:name=".ActivityOne"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
