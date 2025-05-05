@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
 <!--    스텝 2: uses-permission에 android.permission.INTERNET를 추가합니다.-->
 
     <application
