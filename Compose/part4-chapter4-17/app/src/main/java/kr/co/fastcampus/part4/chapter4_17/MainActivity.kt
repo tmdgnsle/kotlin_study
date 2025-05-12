@@ -18,6 +18,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import kr.co.fastcampus.part4.chapter4_17.ui.theme.EffectTheme
 
+private const val TAG = "MainActivity_tmdgnsle"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,15 +44,49 @@ fun EffectEx(lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current) {
     // "헬로 컴포즈"라고 출력합시다.
     // `LaunchedEffect`는 `CouroutineScope`를 만들기 때문에 스코프를 별도로
     // 만들 필요는 없습니다.
+    LaunchedEffect(scaffoldState.snackbarHostState) {
+        scaffoldState.snackbarHostState.showSnackbar("헬로 컴포즈. 패스트캠퍼스")
+    }
 
     // 단계 2: `DisposableEffect`를 호출하고 파리미터로 `lifecycleOwner`를
     // 전달합니다.
+
 
     // `LifecycleEventObserver`를 상속받고 두 상태에 대해 로그를 남깁니다.
     // `Lifecycle.Event.ON_START`, `Lifecycle.Event.ON_STOP`
 
     // 블록 내에서 `lifecycleOwner.lifecycle.addObserver`로 옵저버를 추가하고
     // onDispose에서 옵저버를 제거합니다.
+
+    DisposableEffect(lifecycleOwner) {
+    val observer = LifecycleEventObserver{ _, event ->
+        // SAM: Single Abstract Method
+        when(event){
+            Lifecycle.Event.ON_START -> {
+                Log.d(TAG, "EffectEx: onStart")
+            }
+            Lifecycle.Event.ON_STOP -> {
+                Log.d(TAG, "EffectEx: onStop")
+            }
+            Lifecycle.Event.ON_PAUSE -> {
+                Log.d(TAG, "EffectEx: onPause")
+            }
+            Lifecycle.Event.ON_RESUME -> {
+                Log.d(TAG, "EffectEx: onResume")
+            }
+            else -> {
+                Log.d(TAG, "EffectEx: 그외!")
+            }
+        }
+    }
+
+        lifecycleOwner.lifecycle.addObserver(observer)
+
+
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+        }
+    }
 
     Scaffold(
         scaffoldState = scaffoldState
