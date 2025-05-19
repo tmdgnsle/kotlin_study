@@ -19,9 +19,10 @@ import kr.co.fastcampus.part4.chapter5_9.viewmodel.PokemonViewModel
 @Composable
 fun MainScreen(
     onPokemonClick: (String) -> Unit,
-    viewModel: PokemonViewModel
+    viewModel: PokemonViewModel = hiltViewModel()
 ) {
     val items = viewModel.pokemonList.collectAsLazyPagingItems()
+
     LazyColumn {
         items(items, key = { it.url }) {
             it?.let {
